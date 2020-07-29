@@ -14,19 +14,21 @@ axios.interceptors.request.use(
     },
     function (error) {
         // Do something with request error
-        return Promise.reject(error);
+        // return Promise.reject(error);
     }
 );
 
 // 添加一个响应拦截器
 axios.interceptors.response.use(
     function (response) {
-        // console.log("axios response response:",response)
+        console.log("axios response response:",response)
         return response;
     },
     function (error) {
+        console.log("axios response response:",error)
+
         // Do something with response error
-        return Promise.reject(error);
+        // return Promise.reject(error);
     }
 );
 
@@ -63,9 +65,9 @@ const fetch = options => {
                     timeout: 4000
                 },
                 (error, result) => {
-                    if (error) {
-                        reject(error);
-                    }
+                    // if (error) {
+                        // reject(error);
+                    // }
                     resolve({ statusText: "OK", status: 200, data: result });
                 }
             );

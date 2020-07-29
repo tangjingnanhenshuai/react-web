@@ -2,17 +2,22 @@
 
 import  styles from "./myvideo.less"
 import QierPlayer from 'qier-player';
-const myvideo = ()=>{
+import {useState,useEffect} from "react"
+const myvideo = (prop)=>{
+ 
+  useEffect(()=>{
+        document.getElementById("qireplayer").getElementsByTagName('video')[0].setAttribute("poster",prop.img)
+  },[prop])
+  
   return (
-    <div className={styles.videobox}>
-        {/* <video src="/public/public/video/test.mp4" width="100%" height="100%"  controls="controls" id="video" preload="auto" /> */}
-        {/* <video src="../../../../public/video/test.mp4" width="100%" height="100%"  controls="controls" id="video" preload="auto" /> */}
-        {/* <video width="500" height="400" controls="controls" id="video" preload="auto">
-          <source src="/public/public/video/test.mp4"   type="video/mp4" />
-        </video> */}
+    <div className={styles.videobox}     id="qireplayer">
+       <h4>{prop.name}</h4>
         <QierPlayer
         language="zh"
-        srcOrigin="http://localhost:3000/video/test.mp4" />
+        width={400}
+        height={300}
+        themeColor='#f23300'
+        srcOrigin={prop.url} />
     </div>
   );
 }

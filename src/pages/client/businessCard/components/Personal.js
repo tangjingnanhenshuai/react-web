@@ -4,7 +4,6 @@ import { Form, Input, Modal, Radio, Cascader} from "antd";
 import PicturesWall from '../../../../components/FileUpload/FileUpload2'
 import city from "../../../../utils/city"
 
-
 // import styles from "./modal.less";
 // import { amountFormat } from "../../../utils/index";
 const RadioGroup = Radio.Group;
